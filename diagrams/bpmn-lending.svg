@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420">
+  <style>
+    .label { font-family: Arial, sans-serif; font-size: 14px; fill: #1b1f23; }
+    .title { font-size: 18px; font-weight: bold; }
+    .lane { fill: #f8f9fb; stroke: #c9d1d9; stroke-width: 1; }
+    .task { fill: #ffffff; stroke: #4c6ef5; stroke-width: 1.5; rx: 8; ry: 8; }
+    .event { fill: #ffffff; stroke: #2f9e44; stroke-width: 2; }
+    .gateway { fill: #ffffff; stroke: #f59f00; stroke-width: 2; }
+    .flow { stroke: #495057; stroke-width: 1.4; fill: none; marker-end: url(#arrow); }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#495057" />
+    </marker>
+  </defs>
+
+  <text x="24" y="30" class="label title">BPMN: Выдача и возврат книги</text>
+
+  <rect x="20" y="50" width="1160" height="150" class="lane" />
+  <text x="30" y="70" class="label">Читатель</text>
+  <rect x="20" y="220" width="1160" height="150" class="lane" />
+  <text x="30" y="240" class="label">Библиотекарь</text>
+
+  <circle cx="80" cy="125" r="18" class="event" />
+  <text x="55" y="160" class="label">Запрос книги</text>
+
+  <rect x="170" y="95" width="160" height="60" class="task" />
+  <text x="182" y="130" class="label">Передает читательский билет</text>
+
+  <rect x="370" y="265" width="170" height="60" class="task" />
+  <text x="382" y="300" class="label">Проверка статуса читателя</text>
+
+  <polygon points="580,275 610,305 580,335 550,305" class="gateway" />
+  <text x="520" y="355" class="label">Нет задолженностей?</text>
+
+  <rect x="640" y="265" width="170" height="60" class="task" />
+  <text x="654" y="300" class="label">Выдача книги</text>
+
+  <rect x="860" y="95" width="170" height="60" class="task" />
+  <text x="875" y="130" class="label">Получает книгу</text>
+
+  <circle cx="1080" cy="125" r="18" class="event" />
+  <text x="1045" y="160" class="label">Конец</text>
+
+  <path d="M 98 125 L 170 125" class="flow" />
+  <path d="M 330 125 L 370 125 L 370 265" class="flow" />
+  <path d="M 540 295 L 550 305" class="flow" />
+  <path d="M 610 305 L 640 305" class="flow" />
+  <path d="M 810 305 L 860 305 L 860 155" class="flow" />
+  <path d="M 1030 125 L 1062 125" class="flow" />
+  <path d="M 560 305 L 500 305 L 500 125 L 860 125" class="flow" />
+
+  <rect x="640" y="95" width="170" height="60" class="task" />
+  <text x="654" y="130" class="label">Отказывает в выдаче</text>
+  <path d="M 550 305 L 640 125" class="flow" />
+</svg>
